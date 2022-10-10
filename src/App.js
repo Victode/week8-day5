@@ -1,24 +1,23 @@
 import logo from './logo.svg';
 import './App.css';
+import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
+import Home from './views/Home';
+import { AuthContext } from './contexts/AuthProvider';
+import { useContext } from 'react';
 
 function App() {
+  // const { login, logout } = useContext(AuthContext)
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <nav className="navbar navbar-dark bg-dark mb-5">
+        <div className="navbar-brand mx-auto">Victor's Weather App </div>
+        <div className="navbar-nav">
+          <button  className="btn btn-primary">Login</button>
+        </div>
+      </nav>
+      <div className='items'><Home /></div>
+    </BrowserRouter>
+
   );
 }
 
