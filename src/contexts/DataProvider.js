@@ -18,12 +18,12 @@ export const DataProvider = function(props) {
             })
     }, [])
 
-    // const getLocation = async function(name, callback) {
-    //     const res = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${name}&appid=e325c95def146ec0f6463c1ba75ad893`)
-    //     const data = await res.json()
-    //     callback(data)
-    //     console.log(data)
-    // }
+    const getLocation = async function(name, callback) {
+        const res = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${name}&appid=e325c95def146ec0f6463c1ba75ad893`)
+        const data = await res.json()
+        callback(data)
+        console.log(data)
+    }
     
     const addLocation = async function(location) {
         const name = {
@@ -35,9 +35,9 @@ export const DataProvider = function(props) {
 
     const value = {
         weatherInfo: weatherInfo,
-        addLocation: addLocation
+        addLocation: addLocation,
+        getLocation: getLocation
 
-        
     }
 
     return (
